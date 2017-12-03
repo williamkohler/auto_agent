@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108221919) do
+ActiveRecord::Schema.define(version: 20171203212220) do
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
@@ -35,35 +35,38 @@ ActiveRecord::Schema.define(version: 20171108221919) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "microposts", force: :cascade do |t|
-    t.text "content"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "picture"
-    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_microposts_on_user_id"
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "followed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["followed_id"], name: "index_relationships_on_followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-    t.index ["follower_id"], name: "index_relationships_on_follower_id"
-  end
-
   create_table "shows", force: :cascade do |t|
-    t.integer "deal_id"
     t.string "artist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "artist_id"
-    t.string "deal_stage"
     t.datetime "start_date"
-    t.index ["deal_id"], name: "index_shows_on_deal_id"
+    t.text "venue_name"
+    t.text "address"
+    t.integer "capacity"
+    t.text "ticket_scale"
+    t.integer "gross_potential"
+    t.text "start_time"
+    t.text "set_length"
+    t.integer "num_of_shows"
+    t.text "other_acts"
+    t.datetime "contract_due"
+    t.float "deposit_due"
+    t.float "deposit_received"
+    t.float "fee"
+    t.text "backend"
+    t.text "hotel"
+    t.text "ground"
+    t.text "backline"
+    t.text "promoter_name"
+    t.text "promoter_phone"
+    t.text "promoter_email"
+    t.text "production_name"
+    t.text "production_phone"
+    t.text "production_email"
+    t.datetime "announce"
+    t.datetime "on_sale"
+    t.datetime "end_date"
   end
 
   create_table "users", force: :cascade do |t|

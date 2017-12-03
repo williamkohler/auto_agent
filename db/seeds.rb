@@ -53,3 +53,34 @@ Artist.create!(name: "Portishead")
 Artist.create!(name: "The Hold Steady")
 
 # Shows
+Artist.all.each do |artist|
+  4.times do |n|
+    promoter = Faker::TwinPeaks.character
+    production = Faker::TwinPeaks.character
+    Show.create!(artist: artist.name,
+                 artist_id: artist.id,
+                 start_date: Faker::Time.between(
+                            Date.today, 2.years.from_now, :night),
+                venue_name: Faker::TwinPeaks.location,
+                address: Faker::Address.street_address + ", " +  Faker::Address.city + ", " + Faker::Address.state_abbr,
+                capacity: rand(100..3000),
+                ticket_scale: "TBD",
+                gross_potential: "TBD",
+                start_time: "8:00PM",
+                set_length: "Seventy-five to ninety (75-90) minutes",
+                num_of_shows: 1,
+                other_acts: Faker::RockBand.name,
+                deposit_due: 5000,
+                deposit_received: 0,
+                fee: 10000,
+                backend: "flat guarantee",
+                hotel: "one (1) suite and two (2) single hotel rooms",
+                backline: "per artist rider",
+                promoter_name: promoter,
+                promoter_phone: Faker::PhoneNumber.phone_number,
+                promoter_email: "#{promoter.downcase.tr(" ", "_")}@gmail.com",
+                production_name: production,
+                production_phone: Faker::PhoneNumber.phone_number,
+                production_email: "#{production.downcase.tr(" ", "_")}@gmail.com")
+    end
+  end

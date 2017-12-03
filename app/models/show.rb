@@ -1,10 +1,9 @@
 class Show < ApplicationRecord
   require 'csv'
   require 'date'
-  validates :deal_id, presence: true, uniqueness: true
-  validates :artist, presence: true
-  validates :start_date, presence: true
-  validates :deal_stage, presence: true
+  # validates :artist, presence: true
+  # validates :start_date, presence: true
+  # validates :deal_stage, presence: true
 
   # Find a hubspot contact by it's email
   def hubspot_contact(email)
