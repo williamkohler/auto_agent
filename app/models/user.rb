@@ -130,6 +130,18 @@ end
     return artists
   end
 
+  # Returns the shows assigned to the user for all artists
+  def assigned_shows
+    shows = Array.new
+    self.assigned_artists.each do |artist|
+      artist.shows.each do |show|
+        shows << show
+      end
+    end
+    # sort shows by date order
+    shows.sort_by &:start_date
+  end
+
   private
 
     # Converts email to all lower-case.

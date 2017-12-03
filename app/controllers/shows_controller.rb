@@ -5,11 +5,7 @@ class ShowsController < ApplicationController
   end
 
   def index
-    if current_user.standard_user
-      redirect_to root_url
-    else
-      @show = Show.new
-    end
+    @shows = current_user.assigned_shows
   end
 
 def create
