@@ -1,0 +1,5 @@
+<% if current_user.admin? %>
+  <%= render 'admin_artists' %>
+<% else %>
+  <%= render 'user_artists' %>
+<% end %>

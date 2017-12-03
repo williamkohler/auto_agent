@@ -1,0 +1,21 @@
+<h1>All Artists</h1>
+
+<div class="form_margin">
+  <span><b>Find artist</b></span>
+  <%= form_tag artists_path, method: 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search], class: 'form-control' %>
+    <%= submit_tag 'Search', name: nil, class: "btn btn-primary" %>
+  </p>
+  <% end %>
+
+<div class="artist_list">
+<% @artists.each do |artist| %>
+  <li>
+    <%= link_to artist.name, artist_path(artist) %>
+     | <%= link_to "delete", artist, method: :delete,
+                          data: { confirm: "You sure?" } %>
+ </li>
+<% end %>
+<%= render 'add_artist' %>
+</div>

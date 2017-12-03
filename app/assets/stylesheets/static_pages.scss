@@ -1,0 +1,62 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.full_hero {
+  background-color: #c7dbfc;
+  background-size: cover;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Raleway', helvetica, sans;
+  height: 70vh;
+  margin: 1vh 0 2vh;
+  padding-top: 5vh;
+  text-transform: uppercase;
+}
+
+.hero_home {
+  background-position: center top;
+  // background-image: url('nainoa-shizuru')
+  background-image: url('edwin-andrade-158050')
+}
+
+.test_hero {
+  background-color: #c7dbfc;
+  background-size: cover;
+  box-sizing: border-box;
+  color: white;
+  // height: 80vh;
+  text-transform: uppercase;
+  font-family: 'Raleway', helvetica, sans;
+
+}
+
+.test_div {
+  padding: 2em;
+}
+.green {
+  color: green;
+}
+
+.yellow {
+  color: yellow;
+}
+.red {
+  color: red;
+}
+
+.test_home {
+  align-items: center;
+  background-image: url('bugs');
+  background-position: center top;
+  border: px solid black;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+}
+
+.cal_wrapper {
+  margin: 10px 0;
+  border: 2px solid black;
+  padding: 0 1em;
+}

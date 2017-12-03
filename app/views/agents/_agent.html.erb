@@ -1,0 +1,5 @@
+<li>
+  <%= agent.name %> (<%= agent.hubspot_id %>) | 
+  <%= link_to 'delete', agent, method: :delete,
+                               data: { confirm: 'Are you sure?' } %>
+</li>

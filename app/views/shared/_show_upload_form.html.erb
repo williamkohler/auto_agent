@@ -1,0 +1,18 @@
+<div class="show_upload_form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <span><b>Upload hubspot show csv</b></span>
+      <br>
+      <span class="show_upload_info">
+        File must contain 'deal id', 'artist name', 'start date' &
+        'deal stage'
+      </span>
+      <%= form_for(@show, url: import_shows_path) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <span class="picture">
+        <%= f.file_field :csv_file, accept: 'text/csv' %>
+      </span>
+      <%= f.submit "Upload", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

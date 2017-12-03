@@ -1,0 +1,28 @@
+<% provide(:title, "Test") %>
+<div class="test_hero test_home">
+  <div class="test_div green">
+    <h1>test 1</h1>
+  </div>
+
+  <div class="test_div yellow">
+    <h1>test 2</h1>
+  </div>
+
+  <div class="test_div red">
+    <h1>test 3</h1>
+  </div>
+</div>
+
+<div class="cal_wrapper">
+  <h1>Month Calendar</h1>
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+  <% end %>
+</div>
+
+<div class="cal_wrapper">
+  <h1>Week Calendar</h1>
+  <%= week_calendar number_of_weeks: 1 do |date| %>
+    <%= date %>
+  <% end %>
+</div>

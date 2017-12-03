@@ -1,0 +1,31 @@
+ADMIN USER
+  - view all users
+  - can view all shows
+  - assign artist to standard user
+  - turn standard user into an admin user
+  - add new artists
+  - add new shows
+  - Need to add the ability for an admin to create a relationship between
+    a user & an artist
+  - Upload new show from csv
+  - create new users (admin & non-admin)
+
+STANDARD USER
+- check hubpsot api for security
+- pundit gem (for things like hubspot configs)
+
+
+GEMS
+- pry (debugging) (done)
+- pundit (for things like hubspot config)
+- devise (account activation)
+- rubocop (ruby syntax) (done)
+- rest client vs faraday (for rest api calls)
+- simple_calendar
+
+
+
+PRY
+  - on command line, run 'pry -r ./config/environment'
+  - debugging statement: 'binding.pry'
+  - to resume: 'exit-all'

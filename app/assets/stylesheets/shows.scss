@@ -1,0 +1,22 @@
+// Place all the styles related to the Shows controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+$gray-medium-light: #eaeaea;
+
+.upload_report {
+  background-color: $gray-lighter;
+  border: 2px solid $gray-medium-light;
+  display: block;
+  list-style: none;
+  margin-bottom: 2em;
+  padding-right: 2em;
+  li {
+    overflow: auto;
+  }
+}

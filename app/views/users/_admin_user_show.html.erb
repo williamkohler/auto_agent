@@ -1,0 +1,40 @@
+<div>
+  <h1><%= @user.name %></h1>
+  <% if @user != current_user %>
+    <h2><%= @user.email %></h2>
+  <% end %>
+
+</div>
+
+
+<h3>Assigned Artists</h3>
+
+<div class="artist_list">
+  <ul>
+    <% @user.assigned_artists.each do |artist| %>
+      <li><%= link_to artist.name, artist %>
+        |
+        <%= link_to "remove", controller: :artist_relationships,
+                              action:     :destroy,
+                              artist_id:  artist.id,
+                              user_id:    @user.id %>
+     </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="artist_list">
+  <h3>Unassigned Artists</h3>
+  <ul>
+    <% Artist.all.each do |artist| %>
+      <% if @user.assigned_artists.exclude? artist %>
+        <li> <%= artist.name %> |
+          <%= link_to "add", controller: :artist_relationships,
+                             action:     :create,
+                             artist_id:  artist.id,
+                             user_id:    @user.id %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
