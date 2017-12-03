@@ -37,5 +37,4 @@ If the test suite passes, you'll be ready to run the app in a local server:
 $ rails server
 ```
 
-For more information, contact
-[Bill Kohler](mailto:bkohler4@gmail.com?subject=Auto Agent)
+For more information, contact Bill Kohler @ bkohler4@gmail.com
