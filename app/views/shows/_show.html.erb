@@ -1,5 +1,5 @@
 <div class="show_summary">
-  <h4 class="center"><%= show.start_date %></h4>
+  <h4 class="center"><%= format_date show.start_date %></h4>
 
   <ul>
     <li></li>
@@ -20,7 +20,7 @@
     <li>CAPACITY: <b><%= show.capacity %></b></li>
     <li>TICKET SCALE: <b><%= show.ticket_scale %>
       </b></li>
-    <li>GROSS POTENTIAL: <b><%= show.gross_potential %></b></li>
+    <li>GROSS POTENTIAL: <b><%= number_to_currency show.gross_potential %></b></li>
   </ul>
 
   <ul>
@@ -40,7 +40,6 @@
     <li>FEE: <b> <%= number_to_currency show.fee %></b></li>
     <li>BACKEND: <b><%= show.backend %></b></li>
     <li>HOTEL: <b><%= show.hotel%></b></li>
-    <li>LOCAl GROUND: <b><%= show.ground %></b></li>
     <li>BACKLINE: <b><%= show.backline %></b></li>
   </ul>
 
@@ -50,23 +49,8 @@
   </ul>
 
   <ul>
-    <li>PRODUCTION: <b><%= show.production_name%></b></li>
+    <li>PRODUCTION: <b><%= show.production_name %></b></li>
     <li>PHONE: <b><%= show.production_phone %></b></li>
     <li>EMAIL: <b><%= show.production_email %></b></li>
   </ul>
-
-  <ul>
-    <li>AGENT: <b><%= show[:hubspot_owner_id]%></b></li>
-    <li>CONTRACT: <b>#<%= show[:contract_]%></b></li>
-  </ul>
-
-
-
-
-
-
-
-
-
-
 </div>

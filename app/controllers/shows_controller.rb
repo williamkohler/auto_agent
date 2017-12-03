@@ -2,7 +2,6 @@ class ShowsController < ApplicationController
 
   def new
     @show = Show.new
-    @show.deal_stage = 'issued'
   end
 
   def index
@@ -20,9 +19,8 @@ def create
     redirect_to new_show_path
   else
     @show = Show.new(show_params)
-    @show.deal_stage = 'issued'
     if @show.save
-      flash[:success] = "Saved show '#{params[:show][:deal_id]}' for
+      flash[:success] = "Saved show for
                         #{artist.name}"
       redirect_to new_show_path
     else

@@ -1,18 +1,72 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 form_margin">
     <%= form_for(@show) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label "HubSpot Deal ID" %>
-      <span><em>(case senstive)</em></span>
-      <%= f.number_field :deal_id, class: 'form-control' %>
+    <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :artist %>
-      <%= f.text_field :artist, class: 'form-control' %>
+    <%= f.label :artist %>
+    <%= f.text_field :artist, class: 'form-control' %>
 
-      <%= f.label :start_date %>
-      <%= f.date_field :start_date, class: 'form-control' %>
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date, class: 'form-control' %>
 
-      <%= f.submit "Add show", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+    <%= f.label :Venue %>
+    <%= f.text_field :venue_name, class: 'form-control' %>
+
+    <%= f.label :addresss %>
+    <%= f.text_field :address, class: 'form-control' %>
+
+    <%= f.label :promoter_name %>
+    <%= f.text_field :promoter_name, class: 'form-control' %>
+
+    <%= f.label :promoter_phone %>
+    <%= f.text_field :promoter_phone, class: 'form-control' %>
+
+    <%= f.label :promoter_email %>
+    <%= f.text_field :promoter_email, class: 'form-control' %>
+
+    <%= f.label :start_time %>
+    <%= f.text_field :start_time, class: 'form-control' %>
+
+    <%= f.label :set_length %>
+    <%= f.text_field :set_length, class: 'form-control' %>
+
+    <%= f.label :number_of_shows %>
+    <%= f.number_field :num_of_shows, class: 'form-control' %>
+
+    <%= f.label :other_acts %>
+    <%= f.text_field :other_acts, class: 'form-control' %>
+
+    <%= f.label :deposit_amount_due %>
+    <%= f.number_field :deposit_due, class: 'form-control' %>
+
+    <%= f.label :fee %>
+    <%= f.number_field :fee, class: 'form-control' %>
+
+    <%= f.label :backend %>
+    <%= f.text_field :backend, class: 'form-control' %>
+
+    <%= f.label :hotel %>
+    <%= f.text_field :backend, class: 'form-control' %>
+
+    <%= f.label :backline %>
+    <%= f.text_field :backline, class: 'form-control' %>
+
+    <%= f.label :announce_date %>
+    <%= f.date_field :announce, class: 'form-control' %>
+
+    <%= f.label :on_sale_date %>
+    <%= f.date_field :on_sale, class: 'form-control' %>
+
+    <%= f.label :production_name %>
+    <%= f.text_field :production_name, class: 'form-control' %>
+
+    <%= f.label :production_phone %>
+    <%= f.text_field :production_phone, class: 'form-control' %>
+
+    <%= f.label :production_email %>
+    <%= f.text_field :production_email, class: 'form-control' %>
+
+    <%= f.submit "Add show", class: "btn btn-primary" %>
+  <% end %>
+</div>
 </div>

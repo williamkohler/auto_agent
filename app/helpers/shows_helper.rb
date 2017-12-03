@@ -5,7 +5,7 @@ module ShowsHelper
       return ''
     else
       ii = date.to_i
-      time = Time.at(ii / 1000).utc
+      time = Time.at(ii).utc
       date = time.to_date
       date.strftime('%A %B %d, %Y')
     end
