@@ -75,6 +75,7 @@ Artist.all.each do |artist|
                 fee: 10000,
                 backend: "flat guarantee",
                 hotel: "one (1) suite and two (2) single hotel rooms",
+                # ground: "all local ground transportation provided",
                 backline: "per artist rider",
                 promoter_name: promoter,
                 promoter_phone: Faker::PhoneNumber.phone_number,

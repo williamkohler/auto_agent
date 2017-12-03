@@ -28,7 +28,7 @@ class ArtistsController < ApplicationController
       return unless
         @user.assigned_artists.include? @artist
       end
-    @hubspot_shows = Show.get_hubspot_shows @artist.name
+      @shows = Show.where(artist_id: @artist.id)
   end
 
   #TODO Enforce only admins can make this change with strong params

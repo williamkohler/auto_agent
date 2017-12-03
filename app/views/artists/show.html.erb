@@ -1,11 +1,11 @@
 <% provide(:title, @artist.name) %>
 <h1><%= @artist.name %></h1>
 <h4 class="center">
-  <%= cap_first_letter @hubspot_shows.count.humanize %> upcoming
-  <%= "engagement".pluralize(@hubspot_shows.count) %>
+  <%= cap_first_letter @shows.count.humanize %> upcoming
+  <%= "engagement".pluralize(@shows.count) %>
 </h4>
 
 <div>
-  <%= render partial: "shows/hubspot_show",
-             collection: @hubspot_shows, as: :deal %>
+  <%= render partial: "shows/show",
+             collection: @shows, as: :show %>
 </div>
