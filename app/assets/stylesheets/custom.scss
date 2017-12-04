@@ -4,7 +4,7 @@
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
 $application-green: #104B34;
-$ligher-green: #4AB68C;
+$lighter-green: #4AB68C;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -372,6 +372,7 @@ span.picture {
 }
 
 .form_margin {
+  // border: 1px solid black;
   input {
     margin-bottom: 6px;
   }

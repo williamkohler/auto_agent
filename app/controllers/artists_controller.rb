@@ -32,6 +32,10 @@ class ArtistsController < ApplicationController
       @albums = @artist.top_albums
   end
 
+  def new
+    @artist = Artist.new
+  end
+
   #TODO Enforce only admins can make this change with strong params
   def create
     @artist = Artist.new(artist_params)

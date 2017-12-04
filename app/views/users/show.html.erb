@@ -8,7 +8,11 @@
     <div class="artist_list">
       <h1>Assigned Artists</h1>
       <% @assigned_artists.each do |artist| %>
-        <li><%= link_to artist.name, artist %></li>
+
+        <li>
+          <%= link_to album_for(artist), artist_path(artist) %>
+          <%= link_to artist.name, artist %>
+        </li>
       <% end %>
     </div>
 

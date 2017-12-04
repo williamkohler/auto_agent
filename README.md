@@ -1,6 +1,6 @@
-# Auto-Agent
+# Auto Agent
 
-Auto Agent allows for administrative users to assign artists to other users.
+Auto Agent allows administrative users to assign artists to other users.
 When an artist is assigned to a user, they can then see all details regarding
 the artist's upcoming performances and top albums (provided by last.fm).
 
