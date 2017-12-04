@@ -1,19 +1,14 @@
 <% provide(:title, @user.name) %>
-
-<% if current_user.admin %>
-  <%= render 'admin_user_show' %>
-
-<% elsif @user == current_user %>
-
-    <div class="artist_list">
-      <h1>Assigned Artists</h1>
-      <% @assigned_artists.each do |artist| %>
-
-        <li>
-          <%= link_to album_for(artist), artist_path(artist) %>
-          <%= link_to artist.name, artist %>
-        </li>
-      <% end %>
-    </div>
-
-  <% end %>
+  <% if current_user.admin %>
+    <%= render 'admin_user_show' %>
+    <% elsif @user == current_user %>
+      <div class="artist_list">
+        <h1>Assigned Artists</h1>
+        <% @assigned_artists.each do |artist| %>
+          <li>
+            <%= link_to album_for(artist), artist_path(artist) %>
+            <%= link_to artist.name, artist %>
+          </li>
+        <% end %>
+      </div>
+    <% end %>

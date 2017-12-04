@@ -1,29 +1,24 @@
 <% provide(:title, @artist.name) %>
 
-<h1><%= @artist.name %></h1>
+  <h1><%= @artist.name %></h1>
 
-<div>
+  <div>
+    <h4 class="center engagements">
+      <%= cap_first_letter @shows.count.humanize %>
+      upcoming
+      <%= "engagement".pluralize(@shows.count) %>
+    </h4>
+  </div>
 
-<h4 class="center engagements">
-  <%= cap_first_letter @shows.count.humanize %> upcoming
-  <%= "engagement".pluralize(@shows.count) %>
-</h4>
-</div>
+  <div class="stats">
+    <h4>Top Albums</h4>
+    <% @albums.each do |album| %>
+      <%= link_to image_tag(album["image"][2]["#text"], alt: album["name"],
+                                                        class: "album_art"),
+                                                        album["url"] %>
+    <% end %>
+  </div>
 
-
-<div class="stats">
-  <h4>Top Albums</h4>
-  <% @albums.each do |album| %>
-    <%= link_to image_tag(album["image"][2]["#text"],
-                          alt: album["name"],
-                          class: "album_art"), album["url"] %>
-  <% end %>
-
-</div>
-
-
-
-<div>
-  <%= render partial: "shows/show",
-             collection: @shows, as: :show %>
-</div>
+  <div>
+    <%= render partial: "shows/show", collection: @shows, as: :show %>
+  </div>

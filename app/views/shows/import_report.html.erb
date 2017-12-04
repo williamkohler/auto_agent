@@ -9,14 +9,14 @@
       <% @show_report[:saved].each do |show| %>
         <li>
           <b><%= show.deal_id %></b>
-           - <%= show.artist %></li>
+          -
+          <%= show.artist %></li>
       <% end %>
     </ul>
   </div>
 <% end %>
 
 <% if !@show_report[:unsaved].empty?%>
-
   <h4>Unsucessful:
     <%= @show_report[:unsaved].count %>
   </h4>
@@ -26,9 +26,9 @@
       <% @show_report[:unsaved].each do |show| %>
         <li>
           <b><%= show.deal_id %></b>
-          - <%= show.artist %></li>
+          -
+          <%= show.artist %></li>
       <% end %>
     </ul>
   </div>
-
 <% end %>

@@ -1,15 +1,10 @@
 <% provide(:title, 'All users') %>
-
   <div>
     <h1>All users</h1>
   </div>
-
-<div>
-  <%= render 'find_user' %>
-
-</div>
-
-
+  <div>
+    <%= render 'find_user' %>
+  </div>
   <div>
     <ul class="users">
       <%= render @users %>

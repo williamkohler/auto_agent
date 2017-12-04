@@ -26,8 +26,6 @@ def create
   end
   end
 
-
-#TODO create import_report view & fix debugging window below
 def import
   if params[:show].nil?
     flash[:warning] = "No shows have been uploaded"
@@ -38,8 +36,6 @@ def import
     redirect_to root_url
   end
 end
-
-
 
   private
 

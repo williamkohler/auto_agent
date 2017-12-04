@@ -1,8 +1,5 @@
 class Artist < ApplicationRecord
 
-  # require 'net/http'
-  # require 'json'
-
   has_many :shows, dependent: :destroy
   # TODO: get default scope as name (ignore case) (sql command)
   default_scope -> { order(name: :asc) }
@@ -10,23 +7,13 @@ class Artist < ApplicationRecord
   validates :name, uniqueness: { case_sensitive: false }
 
   class << self
-    def artist_csv
-      csv_text = File.read('app/assets/csv/artists.csv')
-      csv = CSV.parse(csv_text, headers: true)
-      csv['Artist']
-    end
 
-    def show_deal_ids
-      #  deal_ids = Shows.where(artist: self.name)
-      # replace with
-      deal_ids = Show.where('artist = ?', name)
-    end
-
-    # Search by an artist name
+    # Search by an artist name.
     def search(search)
       Artist.where('name like ?', "%#{search}%")
     end
 
+    # Get an Artist's top songs.
     def all_top_songs
       songs = Hash.new
       Artist.all.each do |artist|

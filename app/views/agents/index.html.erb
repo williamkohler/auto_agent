@@ -1,14 +1,16 @@
 <% provide(:title, 'Agents') %>
+  <h4 class="center">Create Agent
+  </h4>
+  <%= render 'shared/create_agent_form' %>
 
-<h4 class="center">Create Agent </h4>
-<%= render 'shared/create_agent_form' %>
-
-<div class="agent_list">
-  <h4 class="center"> Current Agents </h4>
+  <div class="agent_list">
+    <h4 class="center">
+      Current Agents
+    </h4>
+    <%= will_paginate %>
+    <ul>
+      <%= render @agents %>
+    </ul>
+    <%= will_paginate %>
+  </div>
   <%= will_paginate %>
-  <ul>
-    <%= render @agents %>
-  </ul>
-  <%= will_paginate %>
-</div>
-<%= will_paginate %>

@@ -1,56 +1,99 @@
 <div class="show_summary">
   <h4 class="center"><%= format_date show.start_date %></h4>
-
   <ul>
-    <li>ARTIST: <b><%= show.artist %></b></li>
+    <li>ARTIST:
+      <b><%= show.artist %></b>
+    </li>
+  </ul>
+  <ul>
+    <li>VENUE:
+      <b><%= show.venue_name %></b>
+    </li>
+    <li>ADDRESS:
+      <b>
+        <%= show.address %></b>
+    </li>
+  </ul>
+  <ul>
+    <li>PROMOTER:
+      <b><%= show.promoter_name %></b>
+    </li>
+    <li>PHONE:
+      <b><%= show.promoter_phone %></b>
+    </li>
+    <li>EMAIL:
+      <b><%= show.promoter_email %></b>
+    </li>
   </ul>
 
   <ul>
-    <li>VENUE: <b><%= show.venue_name %></b></li>
-    <li>ADDRESS: <b> <%= show.address %></b></li>
+    <li>CAPACITY:
+      <b><%= show.capacity %></b>
+    </li>
+    <li>TICKET SCALE:
+      <b><%= show.ticket_scale %>
+      </b>
+    </li>
+    <li>GROSS POTENTIAL:
+      <b><%= number_to_currency show.gross_potential %></b>
+    </li>
   </ul>
-
   <ul>
-    <li>PROMOTER: <b><%= show.promoter_name %></b></li>
-    <li>PHONE: <b><%= show.promoter_phone %></b></li>
-    <li>EMAIL: <b><%= show.promoter_email %></b></li>
+    <li>START TIME:
+      <b><%= show.start_time %></b>
+    </li>
+    <li>SET LENGTH(S):
+      <b><%= show.set_length %></b>
+    </li>
+    <li>NUMBER OF SHOWS:
+      <b><%= show.num_of_shows %></b>
+    </li>
+    <li>OTHER ARTISTS:
+      <b><%= show.other_acts %></b>
+    </li>
   </ul>
-
   <ul>
-    <li>CAPACITY: <b><%= show.capacity %></b></li>
-    <li>TICKET SCALE: <b><%= show.ticket_scale %>
-      </b></li>
-    <li>GROSS POTENTIAL: <b><%= number_to_currency show.gross_potential %></b></li>
-  </ul>
-
-  <ul>
-    <li>START TIME: <b><%= show.start_time %></b></li>
-    <li>SET LENGTH(S): <b><%= show.set_length %></b></li>
-    <li>NUMBER OF SHOWS: <b><%= show.num_of_shows %></b></li>
-    <li>OTHER ARTISTS: <b><%= show.other_acts %></b></li>
-  </ul>
-
-  <ul>
-    <li>DEPOSIT DUE: <b><%= number_to_currency show.deposit_due %></b></li>
+    <li>DEPOSIT DUE:
+      <b><%= number_to_currency show.deposit_due %></b>
+    </li>
     <li>DEPOSIT RECEIVED:
-      <b><%= number_to_currency show.deposit_received %></b></li>
+      <b><%= number_to_currency show.deposit_received %></b>
+    </li>
   </ul>
-
   <ul>
-    <li>FEE: <b> <%= number_to_currency show.fee %></b></li>
-    <li>BACKEND: <b><%= show.backend %></b></li>
-    <li>HOTEL: <b><%= show.hotel%></b></li>
-    <li>BACKLINE: <b><%= show.backline %></b></li>
+    <li>FEE:
+      <b>
+        <%= number_to_currency show.fee %></b>
+    </li>
+    <li>BACKEND:
+      <b><%= show.backend %></b>
+    </li>
+    <li>HOTEL:
+      <b><%= show.hotel%></b>
+    </li>
+    <li>BACKLINE:
+      <b><%= show.backline %></b>
+    </li>
   </ul>
-
   <ul>
-    <li>ANNOUNCE: <b> <%= format_date show.announce %></b></li>
-    <li>ON SALE: <b> <%= format_date show.on_sale %></b></li>
+    <li>ANNOUNCE:
+      <b>
+        <%= format_date show.announce %></b>
+    </li>
+    <li>ON SALE:
+      <b>
+        <%= format_date show.on_sale %></b>
+    </li>
   </ul>
-
   <ul>
-    <li>PRODUCTION: <b><%= show.production_name %></b></li>
-    <li>PHONE: <b><%= show.production_phone %></b></li>
-    <li>EMAIL: <b><%= show.production_email %></b></li>
+    <li>PRODUCTION:
+      <b><%= show.production_name %></b>
+    </li>
+    <li>PHONE:
+      <b><%= show.production_phone %></b>
+    </li>
+    <li>EMAIL:
+      <b><%= show.production_email %></b>
+    </li>
   </ul>
 </div>
