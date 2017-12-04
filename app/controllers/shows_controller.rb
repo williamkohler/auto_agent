@@ -15,6 +15,8 @@ def create
     redirect_to new_show_path
   else
     @show = Show.new(show_params)
+    artist = Artist.find_by(name: @show.artist)
+    @show.artist_id = artist.id
     if @show.save
       flash[:success] = "Saved show for
                         #{artist.name}"

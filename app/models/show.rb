@@ -3,7 +3,6 @@ class Show < ApplicationRecord
   require 'date'
   # validates :artist, presence: true
   # validates :start_date, presence: true
-  # validates :deal_stage, presence: true
 
   # Find a hubspot contact by it's email
   def hubspot_contact(email)
@@ -17,29 +16,6 @@ class Show < ApplicationRecord
     Show.find_by(deal_id: deal_id).destroy
   end
 
-  # Reads the hubspot csv file
-  # can look up 'Artist' & 'Deal ID'
-  def self.hubspot_csv
-    csv_text = File.read('app/assets/csv/hubspot.csv')
-    CSV.parse(csv_text, headers: true)
-  end
-
-  def self.hubspot_artists
-    artists = Array new
-    csv_text = File.read('app/assets/csv/hubspot.csv')
-    csv = CSV.parse(csv_text, headers: true)
-    csv.each do |row|
-      if !artists.include? row["Artist"]
-        artists << row["Artist"]
-      end
-    end
-    artists.shift # removes the headers
-    artists.sort_by(&:downcase)
-  end
-
-
-  #TODO make sure the method is safe from sql injection
-  # Creates shows from an imported csv file
   def self.import file
     file_name = file.path
     text = File.read(file_name, encoding: 'UTF-8')
@@ -72,7 +48,6 @@ class Show < ApplicationRecord
 
 
   # Returns an array of all hubspot shows for an artist.
-  #TODO rescue w/ error
   def self.get_hubspot_shows(artist)
     issued = "323905d1-2784-4fc5-b4bd-d544348f2668"
     today = Time.zone.now
@@ -100,6 +75,4 @@ class Show < ApplicationRecord
       end
     end
   end
-
-
 end

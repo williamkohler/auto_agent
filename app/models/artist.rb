@@ -32,10 +32,7 @@ class Artist < ApplicationRecord
   # end of the class methods
   end
 
-  # gets the five top tracks for the artist
-    # keys are the song names
-    # values are last.fm url's
-    #TODO include playcounts
+
   def top_tracks
     key = ENV.fetch("LAST_FM_API_KEY")
     url = "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=#{self.name}&api_key=#{key}&format=json"
