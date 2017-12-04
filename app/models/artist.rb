@@ -22,15 +22,12 @@ class Artist < ApplicationRecord
       deal_ids = Show.where('artist = ?', name)
     end
 
-    # Search by an artist name.
+    # Search by an artist name
     def search(search)
       Artist.where('name like ?', "%#{search}%")
     end
 
-    # Returns a hash of the roster's tops top_songs
-    #   key is artist name
-    #  value is top song name
-    def roster_top_songs
+    def all_top_songs
       songs = Hash.new
       Artist.all.each do |artist|
         begin
@@ -68,4 +65,14 @@ class Artist < ApplicationRecord
     end
     return names
   end
+
+  def top_albums
+    key = ENV.fetch("LAST_FM_API_KEY")
+    url = "http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=#{self.name}&api_key=#{key}&limit=5&format=json"
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    json = JSON.parse(response)
+    json["topalbums"]["album"]
+  end
+
 end

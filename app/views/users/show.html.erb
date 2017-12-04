@@ -6,7 +6,7 @@
 <% elsif @user == current_user %>
 
     <div class="artist_list">
-      <h1>Add Artists</h1>
+      <h1>Assigned Artists</h1>
       <% @assigned_artists.each do |artist| %>
         <li><%= link_to artist.name, artist %></li>
       <% end %>

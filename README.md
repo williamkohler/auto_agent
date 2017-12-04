@@ -1,6 +1,8 @@
 # Artist Portal
 
-Auto Agent optimizes calendars for artists and venues to maximize potential profitability.
+Auto Agent allows for administrative users to assign artists to other users.
+When an artist is assigned to a user, that user can then see the artists
+upcoming performances and top albums (from last.fm)
 
 
 ## Getting started
@@ -17,21 +19,17 @@ Next, migrate the database:
 $ rails db:migrate
 ```
 
-Seed the database with data
+Seed the database with data:
 
 ```
 $ rails db:seed
 ```
 
-
-Finally, run the test suite to verify that everything is working correctly:
-
-```
-$ rails test
-```
+Create an 'application.yml' file in the cofig directory with a
+LAST_FM_API_KEY
 
 
-If the test suite passes, you'll be ready to run the app in a local server:
+Finally you can run the app in a local server:
 
 ```
 $ rails server

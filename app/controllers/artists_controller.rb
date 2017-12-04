@@ -29,6 +29,7 @@ class ArtistsController < ApplicationController
         @user.assigned_artists.include? @artist
       end
       @shows = Show.where(artist_id: @artist.id).sort_by &:start_date
+      @albums = @artist.top_albums
   end
 
   #TODO Enforce only admins can make this change with strong params
