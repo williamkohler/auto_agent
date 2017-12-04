@@ -26,8 +26,10 @@ $ rails db:seed
 ```
 
 Create an 'application.yml' file in the cofig directory and add a
-LAST_FM_API_KEY (one can be requested from bkohler4@gmail.com or obtained at
-https://www.last.fm/api/account/create)
+LAST_FM_API_KEY
+
+The API Key can be obtained at https://www.last.fm/api/account/create or
+sending an email to bkohler4@gmail.com to request one.
 
 ```
 LAST_FM_API_KEY: "key"
