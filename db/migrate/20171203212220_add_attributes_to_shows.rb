@@ -2,6 +2,7 @@ class AddAttributesToShows < ActiveRecord::Migration[5.1]
   def change
     add_column :shows, :venue_name, :text
     add_column :shows, :address, :text
+    add_column :shows, :ticket_link, :text
 
     add_column :shows, :capacity, :integer
     add_column :shows, :ticket_scale, :text
@@ -36,6 +37,7 @@ class AddAttributesToShows < ActiveRecord::Migration[5.1]
     add_column :shows, :end_date, :datetime
 
     remove_column :shows, :deal_id
+
 
   end
 end

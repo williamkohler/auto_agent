@@ -20,3 +20,16 @@ $gray-medium-light: #eaeaea;
     overflow: auto;
   }
 }
+
+.show_cal {
+  margin: 10px 0;
+  padding: 0 1em;
+  h4 {
+    display: flex;
+    border-bottom: .2px solid grey;
+  }
+}
+
+.cal_event {
+  color: #4286f4;
+}

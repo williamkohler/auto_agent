@@ -10,6 +10,8 @@
     </h4>
   </div>
 
+
+
   <div class="stats">
     <h4>Top Albums</h4>
     <% @albums.each do |album| %>
@@ -18,6 +20,20 @@
                                                         album["url"] %>
     <% end %>
   </div>
+
+  <div class="show_cal">
+    <h4>Calendar</h4>
+    <%= month_calendar events: @shows do |date, shows| %>
+      <%= date.day %>
+      <% shows.each do |show| %>
+      <div class="cal_event">
+        <%= link_to "#{show.venue_name} @ #{show[:start_time]}", show.ticket_link %>
+      </div>
+      <% end %>
+      <% end %>
+  </div>
+
+
 
   <div>
     <%= render partial: "shows/show", collection: @shows, as: :show %>

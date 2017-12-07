@@ -57,12 +57,14 @@ Artist.all.each do |artist|
   4.times do |n|
     promoter = Faker::TwinPeaks.character
     production = Faker::TwinPeaks.character
+    venue = Faker::TwinPeaks.location
     Show.create!(artist: artist.name,
                  artist_id: artist.id,
                  start_date: Faker::Time.between(
                             Date.today, 2.years.from_now, :night),
-                venue_name: Faker::TwinPeaks.location,
+                venue_name: venue,
                 address: Faker::Address.street_address + ", " +  Faker::Address.city + ", " + Faker::Address.state_abbr,
+                ticket_link: "https://www.google.com/search?q=#{venue.downcase.tr(" ", "+")}",
                 capacity: rand(100..3000),
                 ticket_scale: "TBD",
                 gross_potential: "TBD",

@@ -75,4 +75,11 @@ class Show < ApplicationRecord
       end
     end
   end
+
+  #TODO get cal to work or change start time attribute on show model
+  def start_time
+    self.start_date
+  end
+
+
 end

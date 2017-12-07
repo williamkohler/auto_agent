@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171203212220) do
     t.datetime "start_date"
     t.text "venue_name"
     t.text "address"
+    t.text "ticket_link"
     t.integer "capacity"
     t.text "ticket_scale"
     t.integer "gross_potential"
