@@ -54,7 +54,7 @@ Artist.create!(name: "The Hold Steady")
 
 # Shows
 Artist.all.each do |artist|
-  4.times do |n|
+  20.times do |n|
     promoter = Faker::TwinPeaks.character
     production = Faker::TwinPeaks.character
     venue = Faker::TwinPeaks.location

@@ -1,5 +1,10 @@
-<% if current_user.admin? %>
-  <%= render 'admin_artists' %>
-<% else %>
-  <%= render 'user_artists' %>
-<% end %>
+<% provide(:title, "Artists") %>
+  <% if @artists.empty? %>
+    <h1>No artists found</h1>
+  <% else %>
+    <% if current_user.admin? %>
+      <%= render 'admin_artists' %>
+    <% else %>
+      <%= render 'user_artists' %>
+    <% end %>
+  <% end %>

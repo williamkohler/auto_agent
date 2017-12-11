@@ -1,15 +1,21 @@
-<% provide(:title, 'All users') %>
-  <div>
-    <h1>All users</h1>
-  </div>
-  <div>
-    <%= render 'find_user' %>
-  </div>
-  <div>
-    <ul class="users">
-      <%= render @users %>
-    </ul>
-    <div class="center">
-      <%= will_paginate %>
+<% provide(:title, 'Users') %>
+
+<div>
+  <h1>Users</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+      <div class="center">
+        <%= will_paginate %>
+      </div>
     </div>
   </div>
+  <div class="col-md-4">
+    <%= render 'find_user' %>
+  </div>
+</div>

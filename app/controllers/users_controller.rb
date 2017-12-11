@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         temp = User.search params[:search]
         @users = temp.paginate(page: 1)
       else
-        @users = User.where(activated: true).paginate(page: params[:id])
+        @users = User.where(activated: true).paginate(page: params[:page])
       end
     end
   end
