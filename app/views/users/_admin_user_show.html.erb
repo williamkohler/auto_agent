@@ -10,7 +10,6 @@
     <% @user.assigned_artists.each do |artist| %>
       <li><%= link_to artist.name, artist %>
         |
-        <%= link_to album_for(artist), artist_path(artist) %>
         <%= link_to "remove", controller: :artist_relationships,
                               action:     :destroy,
                               artist_id:  artist.id,
@@ -27,7 +26,6 @@
         <li>
           <%= artist.name %>
           |
-          <%= link_to album_for(artist), artist_path(artist) %>
           <%= link_to "add", controller: :artist_relationships,
                              action:     :create,
                              artist_id:  artist.id,

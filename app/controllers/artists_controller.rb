@@ -10,7 +10,7 @@ class ArtistsController < ApplicationController
       if params[:search]
         @artists = Artist.search(params[:search])
       else
-        @artists = Artist.all
+        @artists = Artist.all.paginate(page: params[:page], per_page: 12)
       end
     else
       @artists = @user.assigned_artists

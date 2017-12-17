@@ -1,10 +1,15 @@
 <% provide(:title, "Artists") %>
-  <% if @artists.empty? %>
-    <h1>No artists found</h1>
-  <% else %>
-    <% if current_user.admin? %>
-      <%= render 'admin_artists' %>
-    <% else %>
-      <%= render 'user_artists' %>
-    <% end %>
-  <% end %>
+<h1>Artists</h1>
+
+<div class="row">
+  <div class="col-md-8 artist-list">
+    <ul>
+      <% @artists.each do |artist| %>
+      <li>
+        <%= album_for artist %>
+        <%= link_to artist.name, artist_path(artist) %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

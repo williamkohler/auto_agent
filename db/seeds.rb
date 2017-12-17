@@ -41,27 +41,42 @@ end
 
 
 # Artists
-Artist.create!(name: "Chromatics")
-Artist.create!(name: "Jai Paul")
-Artist.create!(name: "Radiohead")
-Artist.create!(name: "Talking Heads")
 Artist.create!(name: "Amy Winehouse")
-Artist.create!(name: "The Smiths")
-Artist.create!(name: "Tom Waits")
+Artist.create!(name: "Beach House")
+Artist.create!(name: "Bob Dylan")
+Artist.create!(name: "Chromatics")
+Artist.create!(name: "Com Truise")
+Artist.create!(name: "Damian Marley")
+Artist.create!(name: "David Bowie")
+Artist.create!(name: "Deftones")
 Artist.create!(name: "Interpol")
+Artist.create!(name: "Jai Paul")
+Artist.create!(name: "James Blake")
+Artist.create!(name: "Jeff Buckley")
 Artist.create!(name: "Portishead")
+Artist.create!(name: "Radiohead")
+Artist.create!(name: "Salem")
+Artist.create!(name: "Shlohmo")
+Artist.create!(name: "Talking Heads")
+Artist.create!(name: "The Clash")
 Artist.create!(name: "The Hold Steady")
+Artist.create!(name: "The Mars Volta")
+Artist.create!(name: "The National")
+Artist.create!(name: "The Smiths")
+Artist.create!(name: "The War on Drugs")
+Artist.create!(name: "Tom Waits")
+Artist.create!(name: "Tool")
 
 # Shows
 Artist.all.each do |artist|
-  20.times do |n|
+  80.times do |n|
     promoter = Faker::TwinPeaks.character
     production = Faker::TwinPeaks.character
     venue = Faker::TwinPeaks.location
     Show.create!(artist: artist.name,
                  artist_id: artist.id,
                  start_date: Faker::Time.between(
-                            Date.today, 2.years.from_now, :night),
+                            Date.today, 1.years.from_now, :night),
                 venue_name: venue,
                 address: Faker::Address.street_address + ", " +  Faker::Address.city + ", " + Faker::Address.state_abbr,
                 ticket_link: "https://www.google.com/search?q=#{venue.downcase.tr(" ", "+")}",

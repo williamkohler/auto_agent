@@ -1,20 +1,12 @@
-// Place all the styles related to the Artists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.artist-list {
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
 
-
-.stats {
-  // border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2em;
-  height: 20vh;
-}
-
-.album_art {
-  margin: 6px;
-}
-
-.engagements {
-  padding-bottom: 10px;
+  li {
+    margin-bottom: 14px;
+  }
 }
