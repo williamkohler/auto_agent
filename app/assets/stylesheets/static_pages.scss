@@ -138,3 +138,16 @@ $custom-yellow: #E1AB6A;
     margin: 4%;
   }
 }
+
+
+/* Header */
+.header-logo {
+  // background-position: center top;
+  background-image: url('open-hi-hat');
+  display: block;
+  height: 50px;
+  width: 50px;
+  &:hover {
+    background-image: url('closed-hi-hat');
+  }
+}
