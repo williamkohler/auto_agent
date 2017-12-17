@@ -1,6 +1,4 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$custom-yellow: #E1AB6A;
 
 .full_hero {
   background-color: #c7dbfc;
@@ -16,7 +14,6 @@
 
 .hero_home {
   background-position: center top;
-  // background-image: url('nainoa-shizuru')
   background-image: url('edwin-andrade-158050')
 }
 
@@ -25,7 +22,6 @@
   background-size: cover;
   box-sizing: border-box;
   color: white;
-  // height: 80vh;
   text-transform: uppercase;
   font-family: 'Raleway', helvetica, sans;
 
@@ -59,4 +55,86 @@
   margin: 10px 0;
   border: 2px solid black;
   padding: 0 1em;
+}
+
+/* Homepage */
+
+.homepage-body-style {
+  padding: 0;
+  margin: 0;
+}
+
+.homepage {
+  background-color: #c7dbfc;
+  background-size: cover;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Raleway', helvetica, sans;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: $custom-yellow;
+      text-decoration: none;
+    }
+  }
+  h1 {
+    display: block;
+    margin: 0;
+    padding-top: 14%;
+    text-transform: uppercase;
+  }
+  h4 {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+
+.home-image {
+  background-position: center top;
+  background-image: url('edwin-andrade-158050')
+}
+
+.homepage-links {
+  display: block;
+  align-items: center;
+
+}
+
+.login-backdrop {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1% 14%;
+  font-family: 'Raleway', helvetica, sans;
+  a {
+    &:hover {
+      color: $custom-yellow;
+      text-decoration: none;
+    }
+  }
+}
+
+.homepage-links {
+  text-align: right;
+  padding: 2% 30px 0 0;
+  text-transform: uppercase;
+  span {
+    display: inline-block;
+    padding: 0 1%;
+  }
+}
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  input {
+    margin: 4%;
+  }
 }

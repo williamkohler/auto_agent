@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top navbar-inverse green_header">
+<nav class="navbar navbar-fixed-top navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -9,54 +9,60 @@
       </button>
       <a class="navbar-brand" href=<%= root_url %>>Auto Agent</a>
     </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
+      <% if params[:controller] == "users" %>
+        <%= form_tag users_path, method: 'get', class: "navbar-form navbar-left" do %>
+        <div class="form-group">
+          <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Find user" %>
+        </div>
+        <div class="form-group"><%= submit_tag 'Search', name: nil, class: "btn" %></div>
+      <% end %>
+    <% else %>
       <%= form_tag artists_path, method: 'get', class: "navbar-form navbar-left" do %>
       <div class="form-group">
         <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Find artist" %>
       </div>
-      <div class="form-group"><%= submit_tag 'Search', name: nil, class: "btn btn" %></div>
+      <div class="form-group"><%= submit_tag 'Search', name: nil, class: "btn" %></div>
     <% end %>
-    <ul class="nav navbar-nav navbar-right">
-      <% if admin? %>
+  <% end %>
+  <ul class="nav navbar-nav navbar-right">
+    <% if admin? %>
       <li><%= link_to "Users", users_path %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            Artists
-            <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "All Artists", artists_path %></li>
-            <li><%= link_to "Add Artist", new_artist_path %></li>
-          </ul>
-        </li>
-      <% else %>
-        <li><%= link_to "Artists", artists_path %></li>
-      <% end %>
-      <% if admin? %>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            Shows
-            <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "Add Show", new_show_path %></li>
-            <li><%= link_to "Assigned Shows", shows_path %></li>
-          </ul>
-        </li>
-      <% end %>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          Account
+          Artists
           <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <li><%= link_to "All Artists", artists_path %></li>
+          <li><%= link_to "Add Artist", new_artist_path %></li>
         </ul>
       </li>
-    </ul>
-  </div>
-  <!-- /.navbar-collapse -->
+    <% else %>
+      <li><%= link_to "Artists", artists_path %></li>
+    <% end %>
+    <% if admin? %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          Shows
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Add Show", new_show_path %></li>
+          <li><%= link_to "Assigned Shows", shows_path %></li>
+        </ul>
+      </li>
+    <% end %>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        Account
+        <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+        <li><%= link_to "Log out", logout_path, method: :delete %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- /.navbar-collapse -->
 </div>
 <!-- /.container-fluid -->
 </nav>

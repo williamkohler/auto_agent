@@ -1,6 +1,11 @@
 <% provide(:title) %>
-  <div class="center jumbotron full_hero hero_home">
+
+  <div class="homepage home-image">
+    <div class="homepage-links">
+      <span><%= link_to "sign up", new_user_path %></span>
+      |
+      <span><%= link_to "log in", login_path %></span>
+    </div>
     <h1>Auto Agent</h1>
-    <h4>- Touring, simplified -
-    </h4>
+    <h4>Touring, simplified</h4>
   </div>
